@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.2/css/bulma.min.css" />
+    <link rel="text/css" href="./assets/style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+<body>
+    <section class="hero is-success is-fullheight">
+        <!-- Hero head: will stick at the top -->
+        <div class="hero-head">
+          <header class="navbar">
+            <div class="container">
+              <div class="navbar-brand">
+                <a class="navbar-item">
+                  <h1>Recipe Project</h1>
+                </a>
+                <span class="navbar-burger burger" data-target="navbarMenuHeroC" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </div>
+              <div id="navbarMenuHeroC" class="navbar-menu">
+                <div class="navbar-end">
+                  <a class="navbar-item is-active">
+                    Lets Get Started
+                  </a>
+                  <a class="navbar-item">
+                    Search By Recipe
+                  </a>
+                  <a class="navbar-item">
+                    Search By Food
+                  </a>
+                </div>
+              </div>
+            </div>
+          </header>
+        </div>
+    <!-- Hero content: will be in the middle -->
+    <div class="hero-body" id="title-content">
+        <div class="container has-text-centered">
+            <h1 class="title">
+                Looking for a Recipe?
+            </h1>
+            <h2 class="subtitle">
+                Type in a recipe or click on a menu option
+            </h2>
+            <div class="field">
+                <div class="control has-icons-left">
+                  <input class="input is-large" type="text" placeholder="Add Food or Recipe">
+                  <span class="icon is-medium is-left">
+                    <i class="fas fa-utensils"></i>
+                  </span>
+                </div>
+              </div>
+        </div>
+
+    </div>
+      <!-- Hero footer: will stick at the bottom -->
+  <div class="hero-foot">
+    <nav class="tabs is-boxed is-fullwidth">
+      <div class="container">
+        <ul>
+          <!-- <li class=""><a>Overview</a></li>
+          <li><a>Modifiers</a></li>
+          <li><a>Grid</a></li>
+          <li><a>Elements</a></li>
+          <li><a>Components</a></li>
+          <li><a>Layout</a></li> -->
+        </ul>
+      </div>
+    </nav>
+  </div>
+      </section>
+    
+      <script src="./assets/js/homepage.js"></script>
+</body>
+</html>
