@@ -1,0 +1,17 @@
+#title-content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    align-items: flex-start;
+}
+
+.field {
+    width: 100%;
+}
+
+@media screen and (max-width: 1025) {
+    #title-content {
+        flex-grow: 1;
+        align-items: flex-start;
+    }
+}
