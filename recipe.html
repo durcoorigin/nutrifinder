@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Lookup</title>
+    <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.2/css/bulma.min.css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+ 
+ <body> 
+    <header class="navbar">
+        <div class="container">
+          <div class="navbar-brand">
+            <a class="navbar-item">
+              <h1>Recipe Project</h1>
+            </a>
+            <span class="navbar-burger burger" data-target="navbarMenuHeroC" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </div>
+          <div id="navbarMenuHeroC" class="navbar-menu">
+            <div class="navbar-end">
+              <a class="navbar-item is-active">
+                Lets Get Started
+              </a>
+              <a class="navbar-item">
+                Search By Recipe
+              </a>
+              <a class="navbar-item">
+                Search By Food
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- container for recipes -->
+      <div id="recipe-container"></div>
+
+      <script src="./assets/js/recipe.js"></script>
+ </body>
+ </html>
