@@ -1,4 +1,4 @@
-.has-background {
+#landing-pg-bg {
     background-image: url("../images/hero-img-plates.jpg");
     background-position: center top;
     background-repeat: no-repeat;
@@ -8,20 +8,66 @@
 }
 
 #title-content {
-    align-items: flex-start;
+    align-items: stretch;
+}
+
+#search-bar-nav {
+    display: flex;
+    align-content: center;
+    flex-grow: 1;
+}
+
+#navbar-brand {
+    display: none;
+}
+
+#search-bar-only {
+    width: 100vh;
+}
+
+.columns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#recipie-pg-bg {
+    background-image: none;
 }
 
 @media screen and (min-width: 1025px) {
+    #search-bar-only {
+        width: 100vh;
+    }
+    #navbar-brand {
+        display: flex;
+    }
+
     #title-content {
         align-items: center;
     }
 
-    .has-background {
+    #landing-pg-bg {
         background-image: url("../images/hero-img-plates.jpg");
         background-position: center;
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: cover;
+        background-color: #999; 
+    }
+
+    .columns {
+        display: flex;
+        flex-direction: unset;
+        justify-content: space-evenly;
+    }
+
+    #recipie-pg-bg {
+        background-image: url("../images/food-1239423_1920.jpg");
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: auto;
         background-color: #999; 
     }
 }
