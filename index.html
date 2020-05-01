@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Project</title>
+    <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.2/css/bulma.min.css" />
-    <link rel="text/css" href="./assets/style.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 <body>
-    <section class="hero is-success is-fullheight">
+    <section class="hero is-success is-fullheight has-background">
         <!-- Hero head: will stick at the top -->
         <div class="hero-head">
           <header class="navbar">
@@ -49,34 +49,22 @@
             <h2 class="subtitle">
                 Type in a recipe or click on a menu option
             </h2>
-            <div class="field">
-                <div class="control has-icons-left">
-                  <input class="input is-large" type="text" placeholder="Add Food or Recipe">
-                  <span class="icon is-medium is-left">
-                    <i class="fas fa-utensils"></i>
-                  </span>
-                </div>
+            <div class="field has-addons has-addons-left">
+              <div class="control is-expanded has-icons-left">
+                <input class="input is-large" type="text" placeholder="Add Food or Recipe" id="search-bar">
+                <span class="icon is-medium is-left">
+                  <i class="fas fa-utensils"></i>
+                </span>
               </div>
+              <p class="control">
+                <button class="button is-success is-large" id="search-button" type="submit">
+                  Search
+                </button>
+              </div>
+            </div>
         </div>
-
     </div>
-      <!-- Hero footer: will stick at the bottom -->
-  <div class="hero-foot">
-    <nav class="tabs is-boxed is-fullwidth">
-      <div class="container">
-        <ul>
-          <!-- <li class=""><a>Overview</a></li>
-          <li><a>Modifiers</a></li>
-          <li><a>Grid</a></li>
-          <li><a>Elements</a></li>
-          <li><a>Components</a></li>
-          <li><a>Layout</a></li> -->
-        </ul>
-      </div>
-    </nav>
-  </div>
       </section>
-    
       <script src="./assets/js/homepage.js"></script>
 </body>
 </html>
