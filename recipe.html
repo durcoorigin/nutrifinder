@@ -10,37 +10,41 @@
 </head>
  
  <body> 
+  <section class="hero is-fullheight has-background" id="recipie-pg-bg">
     <header class="navbar">
         <div class="container">
-          <div class="navbar-brand">
-            <a class="navbar-item">
+          <div class="navbar-brand" id="navbar-brand">
+            <a class="navbar-item" href="./index.html">
               <h1>Recipe Project</h1>
             </a>
-            <span class="navbar-burger burger" data-target="navbarMenuHeroC" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');">
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
           </div>
-          <div id="navbarMenuHeroC" class="navbar-menu">
-            <div class="navbar-end">
-              <a class="navbar-item is-active">
-                Lets Get Started
-              </a>
-              <a class="navbar-item">
-                Search By Recipe
-              </a>
-              <a class="navbar-item">
-                Search By Food
-              </a>
+          <div id="search-bar-nav" class="navbar-menu">
+            <div class="navbar-end" id="search-bar-only">
+                <div class="field has-addons has-addons-left">
+                    <div class="control is-expanded has-icons-left">
+                      <input class="input is-medium" type="text" placeholder="Type a Food or Recipe" id="search-bar">
+                      <span class="icon is-medium is-left">
+                        <i class="fas fa-utensils"></i>
+                      </span>
+                    </div>
+                    <p class="control">
+                      <button class="button is-success is-medium" id="search-button" type="submit">
+                        Search
+                      </button>
+                    </div>
+                  </div>
             </div>
           </div>
         </div>
       </header>
-
+        <div class="container">
+          <h1 class="title">
+              Recipes for: <span id="recipe-title"></span>
+          </h1>
       <!-- container for recipes -->
-      <div id="recipe-container"></div>
-
+      <div class="columns" id="recipe-container"></div>
+        </div>
+      </section>
       <script src="./assets/js/recipe.js"></script>
  </body>
  </html>
