@@ -63,7 +63,6 @@ var displayRecipe = function(recipeData) {
             //  ****** Display Title ******   
             var title = recipeData.hits[0].recipe.label;   
             var titleEl = document.createElement("h2");
-            // titleEl.id = "recipe-title";
             titleEl.textContent = title;
             RContainer.appendChild(titleEl);
             titleEl.classList = "subtitle";
@@ -78,23 +77,105 @@ var displayRecipe = function(recipeData) {
             imageEl.setAttribute('src', image);
             RContainer.appendChild(imageURL);
 
-            //  ****** Display ingredients ******
-            var ingredients =  recipeData.hits[0].recipe.ingredients;  
-            var ingredientsHeadEl = document.createElement("h4");
+            // ****** Display Nutrition Informarion ******
+            var nutritionEL = document.createElement("div");
+            nutritionEL.id = "nutrition-container";
+            RContainer.appendChild(nutritionEL);
 
-            // ingredientsHeadEl.id = "ingredient-head";
-            ingredientsHeadEl.textContent = "Ingredients: ";
-            RContainer.appendChild(ingredientsHeadEl);        
+            var serveLbl = "Number of Servings: ";
+            var serve = recipeData.hits[0].recipe.yield;
+            var serveEl = document.createElement("h4");
+            serveEl.textContent = serveLbl + serve;
+            nutritionEL.appendChild(serveEl);
 
-            // loop for ingredient list
-            var ingredientUl = document.createElement("ul");
+            var amtPerServ = "Amount per serving:"
+            var amtPerServEl = document.createElement("h4");
+            amtPerServEl.textContent = amtPerServ;
+            nutritionEL.appendChild(amtPerServEl);
+
+            var calorieLbl = "Calories: ";
+            var calorie = recipeData.hits[0].recipe.calories;
+            var calorieEl = document.createElement("h4");
+            calorieEl.textContent = calorieLbl +  Math.round(calorie / serve);
+            nutritionEL.appendChild(calorieEl);
+
+            var totalFatLbl = "Total Fat: ";
+            var totalFat = recipeData.hits[0].recipe.totalNutrients.FAT.quantity;
+            var totalFatUnit = recipeData.hits[0].recipe.totalNutrients.FAT.unit;
+            var totalFatEl = document.createElement("h4");
+            totalFatEl.textContent = totalFatLbl +  Math.round(totalFat / serve) + totalFatUnit;
+            nutritionEL.appendChild(totalFatEl);
+
+            var satFatLbl = "--Saturated Fat: ";
+            var satFat = recipeData.hits[0].recipe.totalNutrients.FASAT.quantity;
+            var satFatUnit = recipeData.hits[0].recipe.totalNutrients.FASAT.unit;
+            var satFatEl = document.createElement("h4");
+            satFatEl.textContent = satFatLbl +  Math.round(satFat / serve) + satFatUnit;
+            nutritionEL.appendChild(satFatEl);
+
+            var transFatLbl = "--Trans Fat: ";
+            var transFat = recipeData.hits[0].recipe.totalNutrients.FATRN.quantity;
+            var transFatUnit = recipeData.hits[0].recipe.totalNutrients.FATRN.unit;
+            var transFatEl = document.createElement("h4");
+            transFatEl.textContent = transFatLbl +  Math.round(transFat / serve) + transFatUnit;
+            nutritionEL.appendChild(transFatEl);
+
+            var monoFatLbl = "--Monounsaturated Fat: ";
+            var monoFat = recipeData.hits[0].recipe.totalNutrients.FAMS.quantity;
+            var monoFatUnit = recipeData.hits[0].recipe.totalNutrients.FAMS.unit;
+            var monoFatEl = document.createElement("h4");
+            monoFatEl.textContent = monoFatLbl +  Math.round(monoFat / serve) + monoFatUnit;
+            nutritionEL.appendChild(monoFatEl);
+
+            var polyFatLbl = "--Polyunsaturated Fat: ";
+            var polyFat = recipeData.hits[0].recipe.totalNutrients.FAPU.quantity;
+            var polyFatUnit = recipeData.hits[0].recipe.totalNutrients.FAPU.unit;
+            var polyFatEl = document.createElement("h4");
+            polyFatEl.textContent = polyFatLbl +  Math.round(polyFat / serve) + polyFatUnit;
+            nutritionEL.appendChild(polyFatEl);
+
+            var choleLbl = "Cholesterol: ";
+            var chole = recipeData.hits[0].recipe.totalNutrients.CHOLE.quantity;
+            var choleUnit = recipeData.hits[0].recipe.totalNutrients.CHOLE.unit;
+            var choleEl = document.createElement("h4");
+            choleEl.textContent = choleLbl +  Math.round(chole / serve) + choleUnit;
+            nutritionEL.appendChild(choleEl);
             
-            document.getElementById("recipe-container").appendChild(ingredientUl);
-            for (var i = 0; i < ingredients.length; i++) {
-                var ingredientLi = document.createElement("li");
-                ingredientLi.textContent = ingredients[i].text;
-                RContainer.appendChild(ingredientLi);
-                };
+            var sodiumLbl = "Sodium: ";
+            var sodium = recipeData.hits[0].recipe.totalNutrients.NA.quantity;
+            var sodiumUnit = recipeData.hits[0].recipe.totalNutrients.NA.unit;
+            var sodiumEl = document.createElement("h4");
+            sodiumEl.textContent = sodiumLbl +  Math.round(sodium / serve) + sodiumUnit;
+            nutritionEL.appendChild(sodiumEl);
+
+            var carbLbl = "Total Carbohydrate: ";
+            var carb = recipeData.hits[0].recipe.totalNutrients.CHOCDF.quantity;
+            var carbUnit = recipeData.hits[0].recipe.totalNutrients.CHOCDF.unit;
+            var carbEl = document.createElement("h4");
+            carbEl.textContent = carbLbl +  Math.round(carb / serve) + carbUnit;
+            nutritionEL.appendChild(carbEl);
+
+            var fiberLbl = "--Dietary Fiber: ";
+            var fiber = recipeData.hits[0].recipe.totalNutrients.FIBTG.quantity;
+            var fiberUnit = recipeData.hits[0].recipe.totalNutrients.FIBTG.unit;
+            var fiberEl = document.createElement("h4");
+            fiberEl.textContent = fiberLbl +  Math.round(fiber / serve) + fiberUnit;
+            nutritionEL.appendChild(fiberEl);
+
+            var sugarLbl = "--Sugars: ";
+            var sugar = recipeData.hits[0].recipe.totalNutrients.SUGAR.quantity;
+            var sugarUnit = recipeData.hits[0].recipe.totalNutrients.SUGAR.unit;
+            var sugarEl = document.createElement("h4");
+            sugarEl.textContent = sugarLbl +  Math.round(sugar / serve) + sugarUnit;
+            nutritionEL.appendChild(sugarEl);
+
+            var proteinLbl = "Protein: ";
+            var protein = recipeData.hits[0].recipe.totalNutrients.PROCNT.quantity;
+            var proteinUnit = recipeData.hits[0].recipe.totalNutrients.PROCNT.unit;
+            var proteinEl = document.createElement("h4");
+            proteinEl.textContent = proteinLbl +  Math.round(protein / serve) + proteinUnit;
+            nutritionEL.appendChild(proteinEl);
+
         }
     
         //  ****** Recipe 2 ******
@@ -123,20 +204,104 @@ var displayRecipe = function(recipeData) {
             imageEl.setAttribute('src', image);
             RContainer.appendChild(imageURL);
 
-            //  ****** Display ingredients ******
-            var ingredients =  recipeData.hits[1].recipe.ingredients;  
-            var ingredientsHeadEl = document.createElement("h4");
-            ingredientsHeadEl.textContent = "Ingredients: ";
-            RContainer.appendChild(ingredientsHeadEl);      
+            // ****** Display Nutrition Informarion ******
+            var nutritionEL = document.createElement("div");
+            nutritionEL.id = "nutrition-container";
+            RContainer.appendChild(nutritionEL);
 
-            // loop for ingredient list
-            var ingredientUl = document.createElement("ul");
-            document.getElementById("recipe-container").appendChild(ingredientUl);
-            for (var i = 0; i < ingredients.length; i++) {
-                var ingredientLi = document.createElement("li");
-                ingredientLi.textContent = ingredients[i].text;
-                RContainer.appendChild(ingredientLi);
-            };
+            var serveLbl = "Number of Servings: ";
+            var serve = recipeData.hits[1].recipe.yield;
+            var serveEl = document.createElement("h4");
+            serveEl.textContent = serveLbl + serve;
+            nutritionEL.appendChild(serveEl);
+
+            var amtPerServ = "Amount per serving:"
+            var amtPerServEl = document.createElement("h4");
+            amtPerServEl.textContent = amtPerServ;
+            nutritionEL.appendChild(amtPerServEl);
+
+            var calorieLbl = "Calories: ";
+            var calorie = recipeData.hits[1].recipe.calories;
+            var calorieEl = document.createElement("h4");
+            calorieEl.textContent = calorieLbl +  Math.round(calorie / serve);
+            nutritionEL.appendChild(calorieEl);
+
+            var totalFatLbl = "Total Fat: ";
+            var totalFat = recipeData.hits[1].recipe.totalNutrients.FAT.quantity;
+            var totalFatUnit = recipeData.hits[1].recipe.totalNutrients.FAT.unit;
+            var totalFatEl = document.createElement("h4");
+            totalFatEl.textContent = totalFatLbl +  Math.round(totalFat / serve) + totalFatUnit;
+            nutritionEL.appendChild(totalFatEl);
+
+            var satFatLbl = "--Saturated Fat: ";
+            var satFat = recipeData.hits[1].recipe.totalNutrients.FASAT.quantity;
+            var satFatUnit = recipeData.hits[1].recipe.totalNutrients.FASAT.unit;
+            var satFatEl = document.createElement("h4");
+            satFatEl.textContent = satFatLbl +  Math.round(satFat / serve) + satFatUnit;
+            nutritionEL.appendChild(satFatEl);
+
+            var transFatLbl = "--Trans Fat: ";
+            var transFat = recipeData.hits[1].recipe.totalNutrients.FATRN.quantity;
+            var transFatUnit = recipeData.hits[1].recipe.totalNutrients.FATRN.unit;
+            var transFatEl = document.createElement("h4");
+            transFatEl.textContent = transFatLbl +  Math.round(transFat / serve) + transFatUnit;
+            nutritionEL.appendChild(transFatEl);
+
+            var monoFatLbl = "--Monounsaturated Fat: ";
+            var monoFat = recipeData.hits[1].recipe.totalNutrients.FAMS.quantity;
+            var monoFatUnit = recipeData.hits[1].recipe.totalNutrients.FAMS.unit;
+            var monoFatEl = document.createElement("h4");
+            monoFatEl.textContent = monoFatLbl +  Math.round(monoFat / serve) + monoFatUnit;
+            nutritionEL.appendChild(monoFatEl);
+
+            var polyFatLbl = "--Polyunsaturated Fat: ";
+            var polyFat = recipeData.hits[1].recipe.totalNutrients.FAPU.quantity;
+            var polyFatUnit = recipeData.hits[1].recipe.totalNutrients.FAPU.unit;
+            var polyFatEl = document.createElement("h4");
+            polyFatEl.textContent = polyFatLbl +  Math.round(polyFat / serve) + polyFatUnit;
+            nutritionEL.appendChild(polyFatEl);
+
+            var choleLbl = "Cholesterol: ";
+            var chole = recipeData.hits[1].recipe.totalNutrients.CHOLE.quantity;
+            var choleUnit = recipeData.hits[1].recipe.totalNutrients.CHOLE.unit;
+            var choleEl = document.createElement("h4");
+            choleEl.textContent = choleLbl +  Math.round(chole / serve) + choleUnit;
+            nutritionEL.appendChild(choleEl);
+            
+            var sodiumLbl = "Sodium: ";
+            var sodium = recipeData.hits[1].recipe.totalNutrients.NA.quantity;
+            var sodiumUnit = recipeData.hits[1].recipe.totalNutrients.NA.unit;
+            var sodiumEl = document.createElement("h4");
+            sodiumEl.textContent = sodiumLbl +  Math.round(sodium / serve) + sodiumUnit;
+            nutritionEL.appendChild(sodiumEl);
+
+            var carbLbl = "Total Carbohydrate: ";
+            var carb = recipeData.hits[1].recipe.totalNutrients.CHOCDF.quantity;
+            var carbUnit = recipeData.hits[1].recipe.totalNutrients.CHOCDF.unit;
+            var carbEl = document.createElement("h4");
+            carbEl.textContent = carbLbl +  Math.round(carb / serve) + carbUnit;
+            nutritionEL.appendChild(carbEl);
+
+            var fiberLbl = "--Dietary Fiber: ";
+            var fiber = recipeData.hits[1].recipe.totalNutrients.FIBTG.quantity;
+            var fiberUnit = recipeData.hits[1].recipe.totalNutrients.FIBTG.unit;
+            var fiberEl = document.createElement("h4");
+            fiberEl.textContent = fiberLbl +  Math.round(fiber / serve) + fiberUnit;
+            nutritionEL.appendChild(fiberEl);
+
+            var sugarLbl = "--Sugars: ";
+            var sugar = recipeData.hits[1].recipe.totalNutrients.SUGAR.quantity;
+            var sugarUnit = recipeData.hits[1].recipe.totalNutrients.SUGAR.unit;
+            var sugarEl = document.createElement("h4");
+            sugarEl.textContent = sugarLbl +  Math.round(sugar / serve) + sugarUnit;
+            nutritionEL.appendChild(sugarEl);
+
+            var proteinLbl = "Protein: ";
+            var protein = recipeData.hits[1].recipe.totalNutrients.PROCNT.quantity;
+            var proteinUnit = recipeData.hits[1].recipe.totalNutrients.PROCNT.unit;
+            var proteinEl = document.createElement("h4");
+            proteinEl.textContent = proteinLbl +  Math.round(protein / serve) + proteinUnit;
+            nutritionEL.appendChild(proteinEl);
         }
 
         //  ****** Recipe 3 ******
@@ -163,7 +328,7 @@ var displayRecipe = function(recipeData) {
             imageEl.classList = "image";
             imageURL.appendChild(imageEl);
             imageEl.setAttribute('src', image);
-            RContainer.appendChild(imageURL);
+            RContainer.appendChild(imageURL);           
 
             //  ****** Display ingredients ******
             var ingredients =  recipeData.hits[2].recipe.ingredients;  
