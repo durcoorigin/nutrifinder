@@ -35,6 +35,11 @@
     background-image: none;
 }
 
+#recipe-title {
+    font-weight: bolder;
+    border-bottom: black;
+}
+
 @media screen and (min-width: 1025px) {
     #search-bar-only {
         width: 100vh;
