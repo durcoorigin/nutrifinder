@@ -1,0 +1,27 @@
+.has-background {
+    background-image: url("../images/hero-img-plates.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    background-color: #999; 
+}
+
+#title-content {
+    align-items: flex-start;
+}
+
+@media screen and (min-width: 1025px) {
+    #title-content {
+        align-items: center;
+    }
+
+    .has-background {
+        background-image: url("../images/hero-img-plates.jpg");
+        background-position: fixed center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-color: #999; 
+    }
+}
