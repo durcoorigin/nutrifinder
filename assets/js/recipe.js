@@ -7,6 +7,9 @@ var searchEl = document.querySelector("#search-bar");
 // selects the search button
 var searchButtonEl = document.querySelector("#search-button");
 
+
+
+
 // *** search term handler ***
 var searchHandler = function() {
     // event.preventDefault();
@@ -42,8 +45,26 @@ var getRecipe = function(searchItem) {
     });    
 }
 
+var containerCount = function() {
+    var Rcontainer = document.getElementsByClassName("column is-3 box").length;
+    for (j = 0; j < Rcontainer; j++) {
+        document.getElementsByClassName("column is-3 box")[j].id = "Rcontainer" + j;
+        };
+}
+
+var removeC = function (Rcontainer) {
+        var Rcontainer = document.getElementsByClassName("column is-3 box")
+        for (var i = 0; i < Rcontainer.length; i++)
+            console.log("hello!")
+            recipeContainer.removeChild(Rcontainer.id["Rcontainer" + [i]])
+}
+
 // *** display recipe cards ***
 var displayRecipe = function(recipeData) {
+    var Cdelete = recipeContainer.classList.contains(".column is-3 box")
+    if (Cdelete === true) {
+        removeC
+    } else {
 
 
 
@@ -54,8 +75,8 @@ var displayRecipe = function(recipeData) {
             //  ****** Recipie Container ******
             var RContainer = document.createElement('div');
             RContainer.classList = "column is-3 box";
-            RContainer.setAttribute('id', "container-one")
             recipeContainer.appendChild(RContainer);
+            containerCount()
 
             //  ****** Display Title ******   
             var title = recipeData.hits[i].recipe.label;   
@@ -173,7 +194,7 @@ var displayRecipe = function(recipeData) {
             var proteinEl = document.createElement("li");
             proteinEl.textContent = proteinLbl +  Math.round(protein / serve) + proteinUnit;
             nutritionEL.appendChild(proteinEl);
-
+            }
         }
 };
 

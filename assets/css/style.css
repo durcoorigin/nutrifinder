@@ -1,5 +1,5 @@
-#landing-pg-bg {
-    background-image: url("../images/hero-img-plates.jpg");
+#nutr-pg-bg {
+    background-image: url("../images/spread.jpg");
     background-position: center top;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -31,13 +31,17 @@
     align-items: center;
 }
 
-#recipie-pg-bg {
+#recipe-pg-bg {
     background-image: none;
 }
 
 #recipe-title {
     font-weight: bolder;
     border-bottom: black;
+}
+
+#ingredientList {
+    width: 80vh;
 }
 
 @media screen and (min-width: 1025px) {
@@ -52,8 +56,8 @@
         align-items: center;
     }
 
-    #landing-pg-bg {
-        background-image: url("../images/hero-img-plates.jpg");
+    #nutr-pg-bg {
+        background-image: url("../images/spread.jpg");
         background-position: center;
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -67,12 +71,17 @@
         justify-content: space-evenly;
     }
 
-    #recipie-pg-bg {
-        background-image: url("../images/food-1239423_1920.jpg");
+    #recipe-pg-bg {
+        background-image: url("../images/onion_garlic.jpg");
         background-position: center top;
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: auto;
         background-color: #999; 
     }
+
+    #ingredientList {
+        width: 100vh;
+    }
+
 }
