@@ -9,7 +9,8 @@ var searchButtonEl = document.querySelector("#search-button");
 
 // *** search term handler ***
 var searchHandler = function() {
-    event.preventDefault();
+    // event.preventDefault();
+
 
     // set searchItem to input value
     var searchItem = searchEl.value.trim();
@@ -44,7 +45,11 @@ var getRecipe = function(searchItem) {
 // *** display recipe cards ***
 var displayRecipe = function(recipeData) {
 
-    for (var i = 0; i < recipeData.hits.length; i++) {
+
+
+
+    for (var i = 0; i < recipeData.hits.length; i++) {          
+        
 
             //  ****** Recipie Container ******
             var RContainer = document.createElement('div');
