@@ -6,6 +6,11 @@ var recipeContainer = document.querySelector('#recipe-container');
 var searchEl = document.querySelector("#search-bar");
 // selects the search button
 var searchButtonEl = document.querySelector("#search-button");
+var refreshBtn = document.querySelector("#clear-button");
+var saveBtn = document.querySelector("#save-button");
+var sDiv = document.querySelector("#btnS")
+var sTerm = localStorage.getItem('term');
+var newSearch = document.querySelector("button is-success is-small");
 
 
 
@@ -36,8 +41,9 @@ var getRecipe = function(searchItem) {
 	fetch(apiUrl).then(function(response) {
         response.json().then(function(recipeData) {
             console.log(recipeData)
-            displayRecipe(recipeData)
-            getTitle(recipeData)
+                displayRecipe(recipeData)
+                getTitle(recipeData)
+                saveTerm(recipeData)
         });
     });    
 }
@@ -49,19 +55,19 @@ var containerCount = function() {
         };
 }
 
-var removeC = function (Rcontainer) {
-        var Rcontainer = document.getElementsByClassName("column is-3 box")
-        for (var i = 0; i < Rcontainer.length; i++)
-            console.log("hello!")
-            recipeContainer.removeChild(Rcontainer.id["Rcontainer" + [i]])
-}
+// var removeC = function (Rcontainer) {
+//         var Rcontainer = document.querySelector(".column is-3 box")
+//         for (var i = 0; i < Rcontainer.id.length; i++)
+//         // if (newC.id["Rcontainer" + [i]] >= i){
+//         //     consol
+//         // } else {
+//             console.log(newC.id["Rcontainer" + [i]])
+//             recipeContainer.removeChild(newC.id["Rcontainer" + [i]])
+//         // }
+// }
 
 // *** display recipe cards ***
 var displayRecipe = function(recipeData) {
-    var Cdelete = recipeContainer.classList.contains(".column is-3 box")
-    if (Cdelete === true) {
-        removeC
-    } else {
 
     for (var i = 0; i < recipeData.hits.length; i++) {
 
@@ -187,9 +193,27 @@ var displayRecipe = function(recipeData) {
             var proteinEl = document.createElement("li");
             proteinEl.textContent = proteinLbl +  Math.round(protein / serve) + proteinUnit;
             nutritionEL.appendChild(proteinEl);
-            }
         }
 };
+
+var reload = function (){
+    location.reload(false);
+}
+
+var saveTerm = function(recipeData) {
+    localStorage.setItem('term', JSON.stringify(recipeData.q))
+}
+
+var setBtn = function() {
+    var btn = document.createElement('button');
+    btn.setAttribute('class', "button is-success is-small");
+    btn.setAttribute('id', sTerm);
+    btn.innerHTML = sTerm;
+    sDiv.appendChild(btn);
+    if (document.querySelector(sTerm).onclick) {
+        console.log("help")
+    }
+}
 
 // ************** if you want the click to work on enter key ***************************************************
 // *This is purely a feature, but I thought I'd leave it in here if you wanted to review how it works*         |
@@ -208,3 +232,6 @@ var displayRecipe = function(recipeData) {
 
 // when user clicks the search button it runs the search handler function
 searchButtonEl.addEventListener('click', searchHandler);
+refreshBtn.addEventListener('click', reload)
+saveBtn.addEventListener('click', setBtn)
+

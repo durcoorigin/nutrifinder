@@ -15,7 +15,7 @@
         <div class="container">
           <div class="navbar-brand" id="navbar-brand">
             <a class="navbar-item" href="./index.html">
-              <h1>Nutrifinder</h1>
+              <h1 class="title">NutriFinder</h1>
             </a>
             <span class="navbar-burger burger" data-target="navbarMenuHeroC" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');">
               <span></span>
@@ -23,6 +23,24 @@
               <span></span>
             </span>
           </div>
+          <!-- <div class="dropdown is-active">
+            <div class="dropdown-trigger">
+              <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                <span>Dropdown button</span>
+                <span class="icon is-small">
+                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                </span>
+              </button>
+            </div>
+          </div>
+          <div class="dropdown-menu" id="dropdown-menu" role="menu">
+            <div class="dropdown-content">
+              <a href="#" class="dropdown-item">
+                Dropdown item
+              </a>
+            </div>
+          </div>
+        </div> -->
           <div id="search-bar-nav" class="navbar-menu">
             <div class="navbar-end" id="search-bar-only">
               <a class="navbar-item" href="./index.html">
@@ -37,8 +55,8 @@
                       <span class="icon is-medium is-left">
                         <i class="fas fa-utensils"></i>
                       </span>
+                      </div>
                     </div>
-                    <p class="control">
                       <button class="button is-success is-medium" id="search-button" type="submit" value="submit">
                         Search
                       </button>
@@ -54,7 +72,18 @@
           </h1>
           <h2 class="subtitle">
             For full recipe information, please click on the Recipe Image.
+            To reset recipe search, click the "Refresh" button.
+            <button class="button is-danger is-small" id="clear-button" type="submit" value="submit">
+              Refresh
+            </button>
+            To save Search
+            <button class="button is-success is-small" id="save-button" type="submit" value="submit">
+              Save
+            </button>
           </h2>
+          <div id="btnS">
+          </div>
+
       <!-- container for recipes -->
       <div class="columns" id="recipe-container"></div>
         </div>

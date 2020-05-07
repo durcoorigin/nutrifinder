@@ -22,7 +22,7 @@
 }
 
 #search-bar-only {
-    width: 100vh;
+    width: 80vh;
 }
 
 .columns {
@@ -41,7 +41,7 @@
 }
 
 #ingredientList {
-    width: 80vh;
+    width: 70vh;
 }
 
 @media screen and (min-width: 1025px) {
@@ -84,4 +84,10 @@
         width: 100vh;
     }
 
+}
+
+@media screen and (max-width: 480px) {
+    #ingredientList {
+        width: 40vh;
+    }
 }
