@@ -1,3 +1,4 @@
+  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,8 +19,8 @@
           <header class="navbar">
             <div class="container">
               <div class="navbar-brand">
-                <a class="navbar-item">
-                  <h1>Nutrifinder</h1>
+                <a class="navbar-item" href="./nutrition.html">
+                  <h1 class="title">NutriFinder</h1>
                 </a>
                 <span class="navbar-burger burger" data-target="navbarMenuHeroC" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');">
                   <span></span>
@@ -52,33 +53,15 @@
         </h2>
       </div>
           <div class="column">
-            <textarea name="ingredientList" id="ingredientList" cols="30" rows="10" class="form-control">1 cup rice,
+            <textarea name="ingredientList" id="ingredientList" cols="10" rows="10" class="form-control">1 cup rice,
 10 oz chickpeas</textarea>
           <div class="buttons">
             <button type="button" onclick="runAnalyzer()" class="btn btn-primary">Analyze</button>
             <button type="button" onclick="resetPage()" class="btn btn-primary">New Search</button>
           </div>
-                        <div class="err-result"></div>
-                        <div id="analysisResult"></div>
-                    </div>
-                    <div class="col-sm-5">
-                        <div class="demo-result-label"></div>
-                    </div>
-                    <div class="row">
-                        
-                        </div>
-                        <div class="col-md-12 result-area"></div>
-                        <div class="col-md-12 content-area demo-analysis text-center">
-                        </section>
-                           
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+          <!-- Appending nutritional results -->
+    <div id="analysisResult"></div>
       </section>
-      
-      
       <!--<script src="./assets/js/homepage.js"></script>-->
       <script src = "assets/js/nutrition.js"></script>
       <!--<script src = "./assets/js/edscript.js"></script>-->

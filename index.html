@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nutrifinder</title>
+    <title>Recipe Lookup</title>
     <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.2/css/bulma.min.css" />
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
  
- <body> 
+<body> 
   <section class="hero is-fullheight has-background" id="recipe-pg-bg">
     <header class="navbar">
         <div class="container">
           <div class="navbar-brand" id="navbar-brand">
             <a class="navbar-item" href="./index.html">
-              <h1>Nutrifinder</h1>
+              <h1 class="title">NutriFinder</h1>
             </a>
             <span class="navbar-burger burger" data-target="navbarMenuHeroC" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');">
               <span></span>
@@ -37,8 +37,8 @@
                       <span class="icon is-medium is-left">
                         <i class="fas fa-utensils"></i>
                       </span>
+                      </div>
                     </div>
-                    <p class="control">
                       <button class="button is-success is-medium" id="search-button" type="submit" value="submit">
                         Search
                       </button>
@@ -47,41 +47,105 @@
             </div>
           </div>
         </div>
-<<<<<<< HEAD
-    <!-- Hero content: will be in the middle -->
-    <div class="hero-body" id="title-content">
-        <div class="container has-text-centered">
-            <h1 class="title">
-                Looking for a Recipe?
-            </h1>
-            <h2 class="subtitle">
-                Type in a recipe or click on a menu option
-            </h2>
-            <div class="field has-addons has-addons-left">
-              <div class="control is-expanded has-icons-left">
-                <input class="input is-large" type="text" placeholder="Add Food or Recipe" id="search-bar">
-                <span class="icon is-medium is-left">
-                  <i class="fas fa-utensils"></i>
-                </span>
-              </div>
-              <p class="control">
-                <button class="button is-success i-slarge" id="search-button" type="submit">
-                  Search
-                </button>
-              </div>
-            </div>
-=======
       </header>
-        <div class="container">
-          <h1 class="title">
-            Recipe For: <span id="recipe-title"></span>
-          </h1>
-          <h2 class="subtitle">
-            For full recipe information, please click on the Recipe Image.
-          </h2>
-      <!-- container for recipes -->
-      <div class="columns" id="recipe-container"></div>
->>>>>>> nick
+      <div class="container">
+        <h1 class="title">
+          Recipe For: <span id="recipe-title"></span>
+        </h1>
+        <h2 class="subtitle">
+          For full recipe information, please click on the Recipe Image.
+          To reset recipe search, click the "Refresh" button.
+          <button class="button is-danger is-small" id="clear-button" type="submit" value="submit">
+            Refresh
+          </button>
+          To save Search
+          <button class="button is-success is-small" id="save-button" type="submit" value="submit">
+            Save
+          </button>
+        </h2>
+        <div id="btnS">
+        </div>
+
+          <!-- container for recipes -->
+          <div class="columns" id="recipe-container">
+
+            <!-- Recipe #1 -->
+            <div class="column is-3 box" > 
+              <h2 class="subtitle" id="title-0"></h2>
+              <div id="container-0"><img class="image" id="image-0"></div>              
+              <h3>Number of Servings : <span id="serve-0"></span></h3>
+
+              <ul id="nutrition-container">
+                <h3>Amount per serving: </h3>
+                <li>Calories: <span id="calorie-0"></span></li>
+                <li>Total Fat: <span id="fat-0"></span></li>
+                  <li>Saturated Fat: <span id="sat-0"></span></li>
+                  <li>Trans Fat: <span id="trans-0"></span></li>
+                  <li>Monounsaturated Fat: <span id="mono-0"></span></li>
+                  <li>Polyunsaturated Fat: <span id="poly-0"></span></li>
+                <li>Cholesterol: <span id="cholesterol-0"></span></li>
+                <li>Sodium: <span id="sodium-0"></span></li>
+                <li>Total Carbohydrate: <span id="carb-0"></span></li>
+                  <li>Dietary Fiber: <span id="fiber-0"></span></li>
+                  <li>Sugars: <span id="sugar-0"></span></li>
+                <li>Protein: <span id="protien-0"></span></li>          
+              </ul>
+            </div>  
+         
+
+            <!-- Recipe #2 -->
+            <div class="column is-3 box" > 
+              <h2 class="subtitle" id="title-1"></h2>
+              <div id="container-1"><img class="image" id="image-1"></div>              
+              <h3>Number of Servings : <span id="serve-1"></span></h3>
+
+              <h3>Amount per serving: </h3>      
+              <ul id="nutrition-container">
+                <li>Calories: <span id="calorie-1"></span></li>
+                <li>Total Fat: <span id="fat-1"></span></li>
+                <ul>
+                  <li>Saturated Fat: <span id="sat-1"></span></li>
+                  <li>Trans Fat: <span id="trans-1"></span></li>
+                  <li>Monounsaturated Fat: <span id="mono-1"></span></li>
+                  <li>Polyunsaturated Fat: <span id="poly-1"></span></li>
+                </ul>
+                <li>Cholesterol: <span id="cholesterol-1"></span></li>
+                <li>Sodium: <span id="sodium-1"></span></li>
+                <li>Total Carbohydrate: <span id="carb-1"></span></li>
+                  <li>Dietary Fiber: <span id="fiber-1"></span></li>
+                  <li>Sugars: <span id="sugar-1"></span></li>
+                <li>Protein: <span id="protien-1"></span></li>          
+                </ul>
+              </div>
+
+                          <!-- Recipe #2 -->
+            <div class="column is-3 box" > 
+              <h2 class="subtitle" id="title-2"></h2>
+              <div id="container-2"><img class="image" id="image-2"></div>              
+              <h3>Number of Servings : <span id="serve-2"></span></h3>
+
+              <h3>Amount per serving: </h3>      
+              <ul id="nutrition-container">
+                <li>Calories: <span id="calorie-2"></span></li>
+                <li>Total Fat: <span id="fat-2"></span></li>
+                <ul>
+                  <li>Saturated Fat: <span id="sat-2"></span></li>
+                  <li>Trans Fat: <span id="trans-2"></span></li>
+                  <li>Monounsaturated Fat: <span id="mono-2"></span></li>
+                  <li>Polyunsaturated Fat: <span id="poly-2"></span></li>
+                </ul>
+                <li>Cholesterol: <span id="cholesterol-2"></span></li>
+                <li>Sodium: <span id="sodium-2"></span></li>
+                <li>Total Carbohydrate: <span id="carb-2"></span></li>
+                  <li>Dietary Fiber: <span id="fiber-2"></span></li>
+                  <li>Sugars: <span id="sugar-2"></span></li>
+                <li>Protein: <span id="protien-2"></span></li>          
+                </ul>
+            </div>
+
+          </div>
+
+          </div>
         </div>
       </section>
       <script src="./assets/js/recipe.js"></script>
