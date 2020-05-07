@@ -1,0 +1,69 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Project</title>
+    <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.2/css/bulma.min.css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous">
+    </script>
+</head>
+<body>
+    <section class="hero is-success is-fullheight has-background" id="nutr-pg-bg">
+        <!-- Hero head: will stick at the top -->
+        <div class="hero-head">
+          <header class="navbar">
+            <div class="container">
+              <div class="navbar-brand">
+                <a class="navbar-item" href="./nutrition.html">
+                  <h1 class="title">NutriFinder</h1>
+                </a>
+                <span class="navbar-burger burger" data-target="navbarMenuHeroC" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </div>
+              <div id="navbarMenuHeroC" class="navbar-menu">
+                <div class="navbar-end">
+                  <a class="navbar-item" href="./index.html">
+                    Search By Recipe
+                  </a>
+                  <a class="navbar-item" href="./nutrition.html">
+                    Search By Food
+                  </a>
+                </div>
+              </div>
+            </div>
+          </header>
+        </div>
+    <!-- Hero content: will be in the middle -->
+    <div class="container" id="container">
+      <div class="container">
+        <h1 class="title">
+          Nutrition Facts
+        </h1>
+        <h2 class="subtitle">
+          Enter 1 ingredient and unit of measurement per line, (e.g. "1 cup rice,
+          10 oz chickpeas", etc.)
+        </h2>
+      </div>
+          <div class="column">
+            <textarea name="ingredientList" id="ingredientList" cols="10" rows="10" class="form-control">1 cup rice,
+10 oz chickpeas</textarea>
+          <div class="buttons">
+            <button type="button" onclick="runAnalyzer()" class="btn btn-primary">Analyze</button>
+            <button type="button" onclick="resetPage()" class="btn btn-primary">New Search</button>
+          </div>
+          <!-- Appending nutritional results -->
+    <div id="analysisResult"></div>
+      </section>
+      <!--<script src="./assets/js/homepage.js"></script>-->
+      <script src = "assets/js/nutrition.js"></script>
+      <!--<script src = "./assets/js/edscript.js"></script>-->
+</body>
+</html>
