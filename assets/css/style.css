@@ -1,0 +1,87 @@
+#nutr-pg-bg {
+    background-image: url("../images/spread.jpg");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: auto;
+    background-color: #999; 
+}
+
+#title-content {
+    align-items: stretch;
+}
+
+#search-bar-nav {
+    display: flex;
+    align-content: center;
+    flex-grow: 1;
+}
+
+#navbar-brand {
+    display: none;
+}
+
+#search-bar-only {
+    width: 100vh;
+}
+
+.columns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#recipe-pg-bg {
+    background-image: none;
+}
+
+#recipe-title {
+    font-weight: bolder;
+    border-bottom: black;
+}
+
+#ingredientList {
+    width: 80vh;
+}
+
+@media screen and (min-width: 1025px) {
+    #search-bar-only {
+        width: 100vh;
+    }
+    #navbar-brand {
+        display: flex;
+    }
+
+    #title-content {
+        align-items: center;
+    }
+
+    #nutr-pg-bg {
+        background-image: url("../images/spread.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-color: #999; 
+    }
+
+    .columns {
+        display: flex;
+        flex-direction: unset;
+        justify-content: space-evenly;
+    }
+
+    #recipe-pg-bg {
+        background-image: url("../images/onion_garlic.jpg");
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: auto;
+        background-color: #999; 
+    }
+
+    #ingredientList {
+        width: 100vh;
+    }
+
+}

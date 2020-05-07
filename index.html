@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrifinder</title>
+    <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.2/css/bulma.min.css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+ 
+ <body> 
+  <section class="hero is-fullheight has-background" id="recipe-pg-bg">
+    <header class="navbar">
+        <div class="container">
+          <div class="navbar-brand" id="navbar-brand">
+            <a class="navbar-item" href="./index.html">
+              <h1>Nutrifinder</h1>
+            </a>
+            <span class="navbar-burger burger" data-target="navbarMenuHeroC" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </div>
+          <div id="search-bar-nav" class="navbar-menu">
+            <div class="navbar-end" id="search-bar-only">
+              <a class="navbar-item" href="./index.html">
+                Search By Recipe
+              </a>
+              <a class="navbar-item" href="./nutrition.html">
+                Search By Food
+              </a>
+                <div class="field has-addons has-addons-left">
+                    <div class="control is-expanded has-icons-left">
+                      <input class="input is-medium" type="text" placeholder="Type a Food or Recipe" id="search-bar">
+                      <span class="icon is-medium is-left">
+                        <i class="fas fa-utensils"></i>
+                      </span>
+                    </div>
+                    <p class="control">
+                      <button class="button is-success is-medium" id="search-button" type="submit" value="submit">
+                        Search
+                      </button>
+                    </div>
+                  </div>
+            </div>
+          </div>
+        </div>
+<<<<<<< HEAD
+    <!-- Hero content: will be in the middle -->
+    <div class="hero-body" id="title-content">
+        <div class="container has-text-centered">
+            <h1 class="title">
+                Looking for a Recipe?
+            </h1>
+            <h2 class="subtitle">
+                Type in a recipe or click on a menu option
+            </h2>
+            <div class="field has-addons has-addons-left">
+              <div class="control is-expanded has-icons-left">
+                <input class="input is-large" type="text" placeholder="Add Food or Recipe" id="search-bar">
+                <span class="icon is-medium is-left">
+                  <i class="fas fa-utensils"></i>
+                </span>
+              </div>
+              <p class="control">
+                <button class="button is-success i-slarge" id="search-button" type="submit">
+                  Search
+                </button>
+              </div>
+            </div>
+=======
+      </header>
+        <div class="container">
+          <h1 class="title">
+            Recipe For: <span id="recipe-title"></span>
+          </h1>
+          <h2 class="subtitle">
+            For full recipe information, please click on the Recipe Image.
+          </h2>
+      <!-- container for recipes -->
+      <div class="columns" id="recipe-container"></div>
+>>>>>>> nick
+        </div>
+      </section>
+      <script src="./assets/js/recipe.js"></script>
+ </body>
+ </html>
