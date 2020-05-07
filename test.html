@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Project</title>
-    <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
+    <link rel="stylesheet" href="./assets/css/teststyle.css" type="text/css">
     <link rel="stylesheet" href="./assets/css/edstyle.css"type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.2/css/bulma.min.css" />
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
@@ -54,24 +54,25 @@
                         <div class="col-md-12"></div>
                     </div>
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="nutritiontitle">
                             <h1> Nutrition Facts</h1>
                         </div>
                     </div>
 
 
-                    <p>Enter 1 ingredient and unit of measurement per line, like <span class="example">"1 cup rice,
-                            10 oz chickpeas"</span>, etc.</br></p>
+                    <p> <br>
+            Enter 1 ingredient and unit of measurement seperated by a comma, such as, <span class="example">"1 cup rice,
+            10 oz chickpeas"</span>, etc.</br></p>
                     <div class="col-sm-7">
                         <p>
                             <textarea name="" id="ingredientList" cols="30" rows="10" class="form-control">
-                              1 cup rice,
-                              10 oz chickpeas
+      1 cup rice,
+     10 oz chickpeas
                             </textarea>
                         </p>
                         <p>
-                          <button type="button" onclick="runAnalyzer()" class="btn btn-primary">Analyze</button>
-                          <button type="button" onclick="resetPage()" class="btn btn-primary">New</button>
+                          <button type="button" onclick="runAnalyzer()" class="buttonana">Analyze</button>
+                          <button type="button" onclick="resetPage()" class="buttonana">New</button>
                         </p>
                         <div class="err-result"></div>
                         <div id="analysisResult"></div>
@@ -95,7 +96,7 @@
       
       
       <!--<script src="./assets/js/homepage.js"></script>-->
-      <script src = "assets/js/script.js"></script>
+      <script src = "assets/js/testt.js"></script>
       <!--<script src = "./assets/js/edscript.js"></script>-->
 </body>
 </html>
